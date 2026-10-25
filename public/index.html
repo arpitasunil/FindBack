@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FindBack | College Lost & Found</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="/" class="logo">Find<span>Back</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#items">Lost & Found</a>
+      <a href="#report">Report an Item</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <p class="eyebrow">YOUR COLLEGE LOST & FOUND PORTAL</p>
+      <h1>Lost something?<br><span>Let's find it back.</span></h1>
+      <p class="hero-text">
+        A misplaced item shouldn't ruin your day.
+        Search for lost belongings or report an item
+        found around your college.
+      </p>
+      <div class="hero-buttons">
+        <a href="#items" class="button primary">Find an Item</a>
+        <a href="#report" class="button secondary">Report an Item</a>
+      </div>
+    </section>
+
+    <section class="items-section" id="items">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ITEM DIRECTORY</p>
+          <h2>Lost & Found Items</h2>
+        </div>
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search items..."
+          aria-label="Search items"
+        >
+      </div>
+
+      <div class="filters">
+        <button class="filter active" data-status="ALL">All Items</button>
+        <button class="filter" data-status="LOST">Lost</button>
+        <button class="filter" data-status="FOUND">Found</button>
+        <button class="filter" data-status="CLAIMED">Claimed</button>
+      </div>
+
+      <div id="itemsContainer" class="items-grid">
+        <p>Loading items...</p>
+      </div>
+    </section>
+
+    <section class="report-section" id="report">
+      <p class="eyebrow">HELP YOUR CAMPUS COMMUNITY</p>
+      <h2>Report an Item</h2>
+      <p>Lost something or found something that belongs to someone?</p>
+
+      <form id="reportForm">
+        <label for="itemName">Item name</label>
+        <input id="itemName" name="itemName"
+               type="text" maxlength="100" required>
+
+        <label for="category">Category</label>
+        <select id="category" name="category">
+          <option value="Accessories">Accessories</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Stationery">Stationery</option>
+          <option value="Bags">Bags</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="description">Description</label>
+        <textarea id="description" name="description"
+                  maxlength="300" rows="3"></textarea>
+
+        <label for="location">Location</label>
+        <input id="location" name="location"
+               type="text" maxlength="100" required>
+
+        <label for="itemStatus">Report type</label>
+        <select id="itemStatus" name="itemStatus">
+          <option value="LOST">I lost this item</option>
+          <option value="FOUND">I found this item</option>
+        </select>
+
+        <button type="submit" class="button primary">
+          Submit Report
+        </button>
+        <p id="formMessage" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>FindBack — Helping lost belongings find their way home.</p>
+  </footer>
+
+
+
+  
+<section id="claimRequestsSection">
+  <h2>Claim Requests</h2>
+  <p>Review requests for items you reported as found.</p>
+  <button type="button" id="loadClaimRequests">
+    View Claim Requests
+  </button>
+  <div id="claimRequestsContainer">
+    <p>Click the button to view claim requests.</p>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
